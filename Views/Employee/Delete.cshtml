@@ -1,0 +1,147 @@
+﻿@model List<NS.EMS.Model.EmployeeDtModel>
+@{
+   Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name = "viewport" content = "width = device-width" />
+      <title>Delete Page</title>
+   </head>
+	
+   <body>
+       <center>
+      @using (Html.BeginForm()){
+         @Html.AntiForgeryToken()
+         <div class = "form-horizontal">
+            <h2>Employee</h2>
+            <hr />
+          		
+              <h1>
+                    <b>
+                        Delete
+                    </b>
+                </h1>
+
+
+
+            @Html.HiddenFor(model => model.First().EID)
+
+
+
+             <div class = "form-group">
+                 <b>
+               @Html.LabelFor(
+                  model => model.First().EID, htmlAttributes: new{
+                     @class = "control-label col-md-2" })
+				</b>
+               <div class="editor-field">
+                   @Html.TextBoxFor(model=>model.First().EID, new{disabled="disabled", @readonly="readonly"})
+               </div>
+					
+            </div>
+
+
+            <br>
+				
+            <div class = "form-group">
+                <b>
+               @Html.LabelFor(
+                  model => model.First().EmployeeName, htmlAttributes: new{
+                     @class = "control-label col-md-2" })
+				</b>			
+               <div class="editor-field">
+                   @Html.TextBoxFor(model=>model.First().EmployeeName, new{disabled="disabled", @readonly="readonly"})
+               </div>
+					
+            </div>
+
+				<br>
+            <div class = "form-group">
+                <b>
+               @Html.LabelFor(
+                  model => model.First().Email, htmlAttributes: new{
+                     @class = "control-label col-md-2" })
+				</b>			
+               <div class="editor-field">
+                   @Html.TextBoxFor(model=>model.First().Email, new{disabled="disabled", @readonly="readonly"})
+               </div>
+					
+            </div>
+            <br>
+
+            <div class = "form-group">
+                <b>               
+                    @Html.LabelFor(
+                  model => model.First().Gender, htmlAttributes: new{
+                     @class = "control-label col-md-2" })
+				</b>
+
+               <div>
+                   <b>
+                  Male: @Html.RadioButtonFor(model=>model.First().Gender,"Male", new{@disabled="disabled", @readonly="readonly"}) 
+                  <br />
+                  Female: @Html.RadioButtonFor(model=>model.First().Gender,"Female", new{@disabled="disabled", @readonly="readonly"})
+                  </b>
+                   
+               </div>
+					
+            </div>
+
+            
+				<br>
+            <div class = "form-group">
+                <b>
+               @Html.LabelFor(
+                  model => model.First().Mobile, htmlAttributes: new{
+                     @class = "control-label col-md-2" })
+				</b>			
+               <div class="editor-field">
+                   @Html.TextBoxFor(model=>model.First().Mobile, new{disabled="disabled", @readonly="readonly"})
+               </div>
+					
+            </div>
+				
+            <br>
+            <div class = "form-group">
+                <b>
+               @Html.LabelFor(
+                  model => model.First().DeptId, htmlAttributes: new{
+                     @class = "control-label col-md-2" })
+				</b>			
+               <div class="editor-field">
+                   @Html.TextBoxFor(model=>model.First().DeptId, new{disabled="disabled", @readonly="readonly"})
+               </div>
+					
+            </div>
+            <br>
+            
+            <div class = "form-group">
+                <b>
+               @Html.LabelFor(
+                  model => model.First().DeptName, htmlAttributes: new{
+                     @class = "control-label col-md-2" })
+				</b>			
+               <div class="editor-field">
+                   @Html.TextBoxFor(model=>model.First().DeptName, new{disabled="disabled", @readonly="readonly"})
+               </div>
+					
+            </div>
+				<br>
+                <br>
+            <div class = "form-group">
+               <div class = "col-md-offset-2 col-md-10">
+                 <input type="submit" value="Delete User" class = "btn btn-default" /> 
+               </div>
+            </div>
+				
+         </div>
+      }
+		<br>
+      <div>
+         @Html.ActionLink("Previous", "ViewRecord")
+      </div>
+		</center>
+   </body>
+</html>

@@ -1,0 +1,44 @@
+﻿@model List<NS.EMS.Model.EmployeeDtModel>
+@{
+    ViewData["Title"] = "ViewRecords";
+}
+
+ <table class="table">
+      <thead>
+
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Gender</th>
+          
+           <th scope="col">Department Name</th>
+            <th scope="col">Department Id</th>
+          <th scope="col">Edit</th>
+           <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+           @foreach (var item in Model)
+       {
+           <tr>
+               
+                <td>@item.EID</td>
+                <td>@item.EmployeeName</td>
+                <td>@item.Email</td>
+                 <td>@item.Mobile</td>
+                <td>@item.Gender</td>
+               
+                <td>@item.DeptName</td>
+                <td>@item.DeptId</td>
+                <td>@Html.ActionLink("Update","Update", new { id=@item.EID })</td> 
+                <td>@Html.ActionLink("Delete","Delete", new { id=@item.EID})</td>
+               
+           </tr>
+       }
+  </tbody>
+</table>
+
+ 
+   
